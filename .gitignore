@@ -1,10 +1,15 @@
-venv/*
+log
+serverconf.ini
 
+# py cruft
+venv/*
 **/__pycache__/*
+*pyc
 
 # Editor cruft
 *~
 .#*
+\#*#
 
 # MacOS cruft
 .DS_Store

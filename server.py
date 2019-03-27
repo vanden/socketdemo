@@ -142,6 +142,8 @@ def _main():
 
     # Try to set config params from envars; if missing, read values
     # from server_config. This lets envars over-ride the config file.
+    # This is redundant, given how config.Config operates. FixMe
+    # Decide on one mechanism.
     port = os.getenv('PORT', server_config.getint('port'))
     host = os.getenv('HOST', server_config.get('host'))
     log_file_path = os.getenv('LOGFILEPATH', server_config.get('logfilepath'))

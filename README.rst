@@ -37,11 +37,13 @@ config file serverconf.ini will be created.
 
 To run the client and server, open two terminals, change into the cloned
 git repositories directory in both. In one, run ``python3 server.py``
-and in the other ``python3 client.py``. Then, in the client terminal,
-type some text and hit Enter. Repeat. In either terminal, hit Crtl-C to
-shutdown the respective program. In the client terminal, you can also
-send an empty msg (just hit enter as distinct from hitting the
-space-bar then enter) to shutdown the client.
+and in the other ``python3 client.py``. (If your system is configured so
+that the default python is python3, then run ``python server.py`` and
+``python client.py`` instead.) Then, in the client terminal, type some
+text and hit Enter. Repeat. In either terminal, hit Crtl-C to shutdown
+the respective program. In the client terminal, you can also send an
+empty msg (just hit enter as distinct from hitting the space-bar then
+enter) to shutdown the client.
 
 
 REQUIREMENTS

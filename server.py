@@ -16,7 +16,7 @@ class Server:
 
         try:
             # If port was sourced in an envar, it may come as a string
-            # reprentation of an int
+            # representation of an int
             port = int(port)
         except ValueError:
             # Not going to worry about possibility that we are passed a float
@@ -80,7 +80,7 @@ class Server:
         # In what follows, reference sock rather than self.socket for
         # namespace lookup efficiency.
 
-        # Allow quick resuse of the address, ignoring the TIME_WAIT state.
+        # Allow quick reuse of the address, ignoring the TIME_WAIT state.
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
         try:
@@ -110,10 +110,10 @@ class Server:
                 # to occur on a previous organization of the code in
                 # some circumstances where sending an empty msg from
                 # the client terminated the socket and then Ctrl-C was
-                # used to interupt the server. (I'm not clear on the
+                # used to interrupt the server. (I'm not clear on the
                 # details.) I don't understand why, but wrapping
                 # self._run with the try/except to catch
-                # KeyBoardInterupt appears to have resolved it.
+                # KeyBoardInterrupt appears to have resolved it.
                 # Leaving it in as harmless and, should the code again
                 # allow for a Bad file descriptor on calls to
                 # self.socket.shutdown, this would still be the

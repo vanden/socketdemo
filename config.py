@@ -4,7 +4,7 @@ import sys
 
 # Constants for default values to be written to a local config file if
 # one does not exist.
-HOST = 'localhost' # More human-freindly than the ip address; replaced below
+HOST = 'localhost' # More human-friendly than the ip address; replaced below
 PORT = 8042
 LOGFILEPATH = './log'
 
@@ -65,7 +65,7 @@ class Config:
             # called by clients.  Other methods of this class call
             # it only without argument or with a
             # configparser.ConfigParser object as argument. But, it is
-            # worth having as a defence againstg the day when the
+            # worth having as a defence against the day when the
             # prior sentence ceases to be true.
             msg = ' '.join(
                 'config must be a configparser.ConfigParser instance',

@@ -54,9 +54,11 @@ class LogWorker(threading.Thread):
 
     def log(self, msg):
         timestamp, source, msg = msg
+
         # Structured logging FTW
         log_msg = json.dumps(
             {'timestamp':timestamp.isoformat(),
              'source':source,
              'msg':str(msg)})
+
         self.logger.info(log_msg)

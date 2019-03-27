@@ -28,8 +28,8 @@ class Server:
         self.port = port
         self.msg_queue = msg_queue
         # self.socket will be set to a socket.socket by self._initialize_socket
-        self.socket = None 
-        
+        self.socket = None
+
         try:
             # While there is a lot going on in the call-graph, here,
             # we are catching only KeyboardInterrupt, so the breadth
@@ -45,14 +45,14 @@ class Server:
             # Outer loop keeps a socket available by recreating one
             # after a given client closes their connection to the
             # previously created socket.
-            
+
             self._initialize_socket()
             conn, addr = self.socket.accept()
 
             while True:
                 data = conn.recv(4096)
                 time_stamp = datetime.datetime.now(datetime.timezone.utc)
-                
+
                 if not data:
                     # Note that this can occur either if the client
                     # explicitly sends an empty msg or if it is
@@ -64,22 +64,22 @@ class Server:
                     print("Client sent empty data; closing the socket")
                     self._shutdown_server()
                     break
-                
+
                 decoded = data.decode()
                 self.msg_queue.put((time_stamp, addr, decoded))
                 print(decoded)
-                
+
                 # Echo data back to client
                 conn.sendall(data)
 
 
     def _initialize_socket(self):
-        
+
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket = sock
         # In what follows, reference sock rather than self.socket for
         # namespace lookup efficiency.
-        
+
         # Allow quick resuse of the address, ignoring the TIME_WAIT state.
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
@@ -96,11 +96,11 @@ class Server:
                 sys.exit(1)
             else:
                 raise
-        
+
         sock.listen()
         print("Server listening at %s on port %s" %(self.host, self.port))
 
-        
+
     def _shutdown_server(self):
         try:
             self.socket.shutdown(socket.SHUT_RDWR)
@@ -162,6 +162,6 @@ def _main():
 
     s = Server(host, port, msg_queue)
 
-    
+
 if __name__ == '__main__':
     _main()

@@ -7,11 +7,11 @@ import config
 class Client:
 
     def __init__(self, host, port):
-        
+
         self.host = host
         self.port = port
         self.socket = None # Will be socket.socket set by self._get_socket
-        
+
         self._run()
 
 
@@ -49,7 +49,7 @@ class Client:
             print("Could not resolve host %s" %(self.host,))
             sys.exit(1)
 
-        print("Connected to %s on %s" %address)    
+        print("Connected to %s on %s" %address)
         return sock
 
 
@@ -60,7 +60,7 @@ class Client:
         # until after an input is given. Which isn't the right thing.
         # FixMe
         msg = input()
-        
+
         if not msg:
             self._shutdown()
         else:

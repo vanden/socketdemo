@@ -1,6 +1,6 @@
-========================
-DECISIONNEXT SOCKET DEMO
-========================
+===========
+SOCKET DEMO
+===========
 
 This document has the following sections:
 

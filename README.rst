@@ -36,7 +36,7 @@ On first run of either server.py or client.py, a default-valued local
 config file serverconf.ini will be created.
 
 To run the client and server, open two terminals, change into the cloned
-git repositories directory in both. In one, run ``python3 server.py``
+git repository's directory in both. In one, run ``python3 server.py``
 and in the other ``python3 client.py``. (If your system is configured so
 that the default python is python3, then run ``python server.py`` and
 ``python client.py`` instead.) Then, in the client terminal, type some

@@ -1,6 +1,6 @@
-========================
-DECISIONNEXT SOCKET DEMO
-========================
+===========
+SOCKET DEMO
+===========
 
 This document has the following sections:
 
@@ -14,14 +14,19 @@ This document has the following sections:
 OVERVIEW
 ========
 
-The files provide a simple POC of a socket server and client. The client
-sends messages to the server from the terminal. The server logs the
-messages (as structured JSON log entries with timestamp and source
-address information), echos the message to its terminal, and returns the
-entire message to the client. The host, port, and logfile location are
-all determined by environment variables, or, failing that, configuration
-file values. On the first run of either the client or the server, a
-default configuration file is created if one does not already exist.
+As part of the screening process for a job that I applied for, I was
+asked to produce a simple POC of a socket server and client. There's not
+a lot exciting about the task; a set of minimal requirements was given
+to me and this code meets the spec.
+
+The client sends messages to the server from the terminal. The server
+logs the messages (as structured JSON log entries with timestamp and
+source address information), echos the message to its terminal, and
+returns the entire message to the client. The host, port, and logfile
+location are all determined by environment variables, or, failing that,
+configuration file values. On the first run of either the client or the
+server, a default configuration file is created if one does not already
+exist.
 
 That's all.
 
